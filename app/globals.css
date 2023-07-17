@@ -18,6 +18,11 @@
 
 }
 
+*, *::after, *::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   padding: 0;
   margin: 0;
@@ -39,6 +44,9 @@ body {
 .text-primary{
   color: var(--text-primary);
 
+}
+.bg-accent{
+  background: var(--text-primary);
 }
 input {
   @apply py-2 px-4 border-none bg-inherit outline-none text-sm;
@@ -79,4 +87,14 @@ nav select::after {
 img{
   width: 100%;
   height: 100%;
+}
+.phone-card:hover,.border-accent:hover{
+  border: 1px solid var(--text-primary);
+  cursor: pointer;
+}
+.phone-card{
+
+}
+.categories > li, .services > li{
+  margin: .4rem 0;
 }
