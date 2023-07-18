@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function ElectronicsBrandCard() {
     return (
         <div className="h-72 w-fit flex bg-gray-950 p-4 rounded-3xl">
@@ -7,7 +9,7 @@ export default function ElectronicsBrandCard() {
                 <h1 className="text-white text-2xl font-bold">UP to 80% OFF</h1>
             </div>
             <div className=" w-40 ">
-                <img className="object-cover rounded-xl" src="https://images.macrumors.com/t/9r84bU_ZTOTrUixxwhjHUFsAvD4=/800x0/smart/article-new/2017/09/iphonexdesign.jpg?lossy" alt="" />
+                <Image  alt="electronic brands" className="object-cover rounded-xl" src={"https://images.macrumors.com/t/9r84bU_ZTOTrUixxwhjHUFsAvD4=/800x0/smart/article-new/2017/09/iphonexdesign.jpg?lossy"} />
             </div>
         </div>
     )
