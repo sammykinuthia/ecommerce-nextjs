@@ -13,7 +13,10 @@ export default function Hero() {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundSize: 'cover',
-        height: '400px'
+        aspectRatio:"video",
+        width:"100%",
+        minHeight:"200px"
+        // height: '400px'
     }
     const slideImages = [
         {
@@ -36,7 +39,7 @@ export default function Hero() {
             <Slide >
                 {slideImages.map((slideImage, index) => (
                     <div key={index}>
-                        <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
+                        <div className='md:h-72 xl:h-80 2xl:h-96' style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
                             <span style={spanStyle}>{slideImage.caption}</span>
                         </div>
                     </div>

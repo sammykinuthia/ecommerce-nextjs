@@ -7,7 +7,7 @@ import DailyEssentials from './components/DailyEssentials'
 
 export default function Home() {
   return (
-    <main className="mx-36">
+    <main className=" mx-10 xl:mx-36">
       <Hero />
       <SmartPhoneCategory />
       <TopCategory />

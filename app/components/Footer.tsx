@@ -3,10 +3,10 @@ import { LuPhoneCall } from 'react-icons/lu'
 
 export default function Footer() {
     return (
-        <footer className="bg-accent w-full p-12 mb-0 text-white px-32">
+        <footer className="bg-accent w-full p-12 mb-0 text-white px-10 xl:px-36">
             <div className="top grid grid-cols-3">
                 <div className="contacts">
-                    <h1 className="text-4xl mb-8 font-extrabold">MegaMart</h1>
+                    <h1 className="text-3xl mb-6 font-extrabold">MegaMart</h1>
                     <h3 className="font-bold">Contact Us</h3>
                     <div className="whatsapp my-4">
                         <div className='flex items-center gap-2'>

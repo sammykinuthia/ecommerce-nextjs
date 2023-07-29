@@ -9,7 +9,7 @@ export default function ElectronicsBrandCard() {
                 <h1 className="text-white text-2xl font-bold">UP to 80% OFF</h1>
             </div>
             <div className=" w-40 ">
-                <Image  alt="electronic brands" className="object-cover rounded-xl" src={"https://images.macrumors.com/t/9r84bU_ZTOTrUixxwhjHUFsAvD4=/800x0/smart/article-new/2017/09/iphonexdesign.jpg?lossy"} />
+                <Image width={400} height={600}  alt="electronic brands" className="object-cover rounded-xl" src={"https://images.macrumors.com/t/9r84bU_ZTOTrUixxwhjHUFsAvD4=/800x0/smart/article-new/2017/09/iphonexdesign.jpg?lossy"} />
             </div>
         </div>
     )
