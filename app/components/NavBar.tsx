@@ -15,11 +15,11 @@ export default function NavBar() {
     return (
         <nav className="">
             <div className="top-nav w-full py-1 px-10 xl:px-36">
-                <p className="welcome">Welcome to worldwide MegaMart</p>
+                <p className="welcome text-xs">Welcome to worldwide MegaMart</p>
                 <div className="flex gap-2">
-                    <p className="border-r-2 px-2 flex gap-1 items-center"><HiLocationMarker className="nav-icons" /> Deliver to 0790360980</p>
-                    <p className="border-r-2 px-2 flex gap-1 items-center"> <FaTruck className="nav-icons" /> Track your order</p>
-                    <p className="flex gap-1 items-center"> <HiClock className="nav-icons" />All Offers</p>
+                    <p className="border-r-2 px-2 flex gap-1 items-center text-xs"><HiLocationMarker className="nav-icons" /> Deliver to 0790360980</p>
+                    <p className="border-r-2 px-2 flex gap-1 items-center text-xs"> <FaTruck className="nav-icons" /> Track your order</p>
+                    <p className="flex gap-1 items-center text-xs"> <HiClock className="nav-icons" />All Offers</p>
                 </div>
             </div>
             <div className="main-nav w-full flex py-4 text-xl items-center justify-between px-10 xl:px-36">

@@ -4,7 +4,7 @@ import { LuPhoneCall } from 'react-icons/lu'
 export default function Footer() {
     return (
         <footer className="bg-accent w-full p-12 mb-0 text-white px-10 xl:px-36">
-            <div className="top grid grid-cols-3">
+            <div className="top grid  md:grid-cols-3 justify-center ">
                 <div className="contacts">
                     <h1 className="text-3xl mb-6 font-extrabold">MegaMart</h1>
                     <h3 className="font-bold">Contact Us</h3>
@@ -51,7 +51,7 @@ export default function Footer() {
             </div>
             <div className="bottom border-t">
 
-                <p className="text-center ">&copy; 2023 All rights reserved. Reliance Retail Ltd.</p>
+                <p className="text-center ">&copy; 2023 All rights reserved. Samsy Lmt.</p>
             </div>
         </footer>
     )

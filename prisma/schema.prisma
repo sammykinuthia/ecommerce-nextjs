@@ -1,0 +1,109 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(uuid())
+  firstName String?
+  lastName  String?
+  username  String
+  email     String    @unique
+  phone     String?
+  bio       String?
+  role      Role      @default(USER)
+  Address   Address?
+  Product   Product[]
+  Cart      Cart?
+  Order     Order[]
+}
+
+model Address {
+  id      String  @id @default(uuid())
+  country String?
+  county  String?
+  city    String?
+  userId  String  @unique
+  user    User    @relation(fields: [userId], references: [id])
+}
+
+model Category {
+  id         String    @id @default(uuid())
+  name       String
+  created_at DateTime  @default(now())
+  update_at  DateTime  @updatedAt
+  products   Product[]
+}
+
+model Product {
+  id          String      @id @default(uuid())
+  name        String
+  description String
+  price       Decimal
+  images      String[]
+  quantity    Int
+  created_at  DateTime    @default(now())
+  update_at   DateTime    @updatedAt
+  userId      String
+  user        User        @relation(fields: [userId], references: [id])
+  categoryId  String
+  category    Category    @relation(fields: [categoryId], references: [id])
+  OrderItem   OrderItem[]
+  CartItem    CartItem[]
+}
+
+model CartItem {
+  id        String   @id @default(uuid())
+  quantity  Int      @default(1)
+  price     Decimal
+  cartId    String?
+  Cart      Cart?    @relation(fields: [cartId], references: [id])
+  Product   Product? @relation(fields: [productId], references: [id])
+  productId String?
+}
+
+model Cart {
+  id     String     @id @default(uuid())
+  userId String     @unique
+  user   User       @relation(fields: [userId], references: [id])
+  items  CartItem[]
+}
+
+model OrderItem {
+  id        String   @id @default(uuid())
+  quantity  Int      @default(1)
+  price     Decimal
+  Order     Order?   @relation(fields: [orderId], references: [id])
+  orderId   String?
+  Product   Product? @relation(fields: [productId], references: [id])
+  productId String?
+}
+
+model Order {
+  id        String      @id @default(uuid())
+  OrderItem OrderItem[]
+  status    OrderStatus @default(PENDING)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  FAILED
+  SUCCESS
+  COMPLETED
+}
